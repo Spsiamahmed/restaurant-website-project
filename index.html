@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern responsive restaurant website built with HTML, CSS, JavaScript by SP Siam Ahmed. Perfect for food, cafe & restaurant business.">
+    
+    <meta name="keywords" content="restaurant website, food website, restaurant project, web developer project, SP Siam Ahmed, restaurant html css js">
+    
+    <meta name="author" content="SP Siam Ahmed">
+    
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:title" content="Restaurant Website Project">
+    <meta property="og:description" content="A responsive restaurant website project by SP Siam Ahmed">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spsiamahmed.github.io/restaurant-project/">
+    <meta property="og:image" content="https://your-image-link.png">
+    
+    <title>Gourmet Haven - Fine Dining Experience |sp siam ahmed project</title>
+    
+    <!-- Google Fonts - Fixed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --accent-color: #ffe66d;
+            --dark-color: #2d3436;
+            --light-color: #ffffff;
+            --bg-light: #f7f9fc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif !important;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: var(--light-color) !important;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            padding: 150px 20px 100px;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        .btn-custom {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        .btn-custom:hover {
+            background: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 15px;
+        }
+        
+        .bg-light-custom {
+            background: var(--bg-light);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+            text-align: center;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        .section-title span {
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about-img {
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .about-text {
+            padding: 20px;
+        }
+        
+        .about-text h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        .about-text p {
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Menu Section */
+        .menu-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .menu-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .menu-card-body {
+            padding: 25px;
+        }
+        
+        .menu-card-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        .menu-card-body p {
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 0.95rem;
+        }
+        
+        .menu-price {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        /* Gallery Section */
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: none;
+        }
+        
+        .social-icons a {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+        }
+        
+        footer p {
+            font-family: 'Poppins', sans-serif !important;
+            margin-bottom: 0;
+        }
+        
+        .developer-credit {
+            background: #1a1d1f;
+            padding: 20px 15px;
+            margin-top: 20px;
+        }
+        
+        .developer-credit p {
+            font-family: 'Poppins', sans-serif !important;
+            margin-bottom: 0;
+        }
+        
+        .developer-credit a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif !important;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 120px 15px 80px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            
+            section {
+                padding: 60px 15px;
+            }
+            
+            .btn-custom {
+                padding: 12px 30px;
+                font-size: 0.95rem;
+            }
+            
+            .menu-card img {
+                height: 200px;
+            }
+            
+            .gallery-item img {
+                height: 250px;
+            }
+            
+            .contact-info {
+                padding: 30px 20px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-section p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .menu-card-title {
+                font-size: 1.2rem;
+            }
+            
+            .menu-price {
+                font-size: 1.3rem;
+            }
+            
+            .about-text {
+                padding: 10px;
+            }
+            
+            .contact-item {
+                font-size: 0.9rem;
+            }
+            
+            .social-icons a {
+                font-size: 1.3rem;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Gourmet Haven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>Welcome to Gourmet Haven</h1>
+            <p>Experience Culinary Excellence in Every Bite</p>
+            <a href="#contact" class="btn-custom">Reserve Your Table</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light-custom">
+        <div class="container">
+            <h2 class="section-title">About <span>Us</span></h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Restaurant Interior" class="about-img">
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-text">
+                        <h3>Our Story</h3>
+                        <p>At Gourmet Haven, we believe that dining is an experience that engages all the senses. Since our founding in 2010, we've been committed to crafting exceptional dishes using the finest locally-sourced ingredients.</p>
+                        <p>Our award-winning chefs combine traditional techniques with modern innovation to create unforgettable flavors that keep our guests coming back for more.</p>
+                        <p>We pride ourselves on providing not just a meal, but a memorable dining experience in a warm and welcoming atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <div class="container">
+            <h2 class="section-title">Our <span>Menu</span></h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Salad">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Mediterranean Salad</h3>
+                            <p>Fresh greens with feta, olives, and lemon vinaigrette</p>
+                            <span class="menu-price">$18</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600" alt="Steak">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Grilled Ribeye Steak</h3>
+                            <p>Prime cut served with roasted vegetables and herb butter</p>
+                            <span class="menu-price">$45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600" alt="Pasta">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Truffle Pasta</h3>
+                            <p>Handmade pasta with black truffle and parmesan cream</p>
+                            <span class="menu-price">$32</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Pizza">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Artisan Pizza</h3>
+                            <p>Wood-fired pizza with fresh mozzarella and basil</p>
+                            <span class="menu-price">$24</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1580959595-452a3c57d27f?w=600" alt="Seafood">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Grilled Salmon</h3>
+                            <p>Atlantic salmon with lemon butter and asparagus</p>
+                            <span class="menu-price">$38</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600" alt="Dessert">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Chocolate Lava Cake</h3>
+                            <p>Warm chocolate cake with vanilla ice cream</p>
+                            <span class="menu-price">$14</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-light-custom">
+        <div class="container">
+            <h2 class="section-title">Our <span>Gallery</span></h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600" alt="Dining">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600" alt="Food">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600" alt="Bar">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600" alt="Chef">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Interior">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Ambiance">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <div class="row">
+                <div class="col-lg-5 col-md-12">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Culinary Street, Food District, NYC 10001</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@gourmethaven.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sun: 11:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="social-icons mt-4">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Subject" required>
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn-custom">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gourmet Haven. All Rights Reserved.</p>
+        </div>
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="#">SP Siam Ahmed</a> | Web Developer Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+            
+            // Form submission
+            $('.contact-form').on('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        });
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Demo Restaurant Website",
+    "author": {
+    "@type": "Person",
+    "name": "SP Siam Ahmed"
+    },
+    "description": "A modern responsive restaurant website project created by SP Siam Ahmed using HTML, CSS, and JavaScript.",
+    "servesCuisine": "Fast Food",
+    "url": "https://your-github-username.github.io/restaurant-project/",
+    "image": "https://your-image-link.png"
+    }
+    </script>
+</body>
+</html>
