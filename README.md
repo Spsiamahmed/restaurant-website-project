@@ -17,4 +17,4 @@ A modern, responsive restaurant website built using **HTML, CSS, JavaScript**.
 restaurant website, restaurant project, food website, web developer project, SP Siam Ahmed
 
 ## 🌐 Live Demo
-https://your-github-username.github.io/restaurant-project/
+https://spsiamahmed.github.io/restaurant-website-project/
